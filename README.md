@@ -33,6 +33,12 @@ In order to recreate the models presented in this repository, here are the comma
 - Train model with repolygonization: `ketos train -t train/*.xml -e dev/*.xml -u NFKD -f alto --repolygonize`
 - Evaluate models: `ketos test -m [MODEL_NAME] -e dev/*.xml -f alto`
 
+## Results
+<p class="float" align="center">
+ <img src="images/results_model.png" width="300"/>
+ <img src="images/results_model_repoly.png" width="300"/>
+ </p>
+
 ## Thanks to 
 Thanks to Simon Gabay, Claire Jahan, Caroline Corbières, Gabriela Elgarrista and Carmen Brando for their help and work.
 
