@@ -19,6 +19,7 @@ The dataset is composed of 30 pages from the 150 pages dataset prepared [here](h
 │     ├─ images
 |     └─ transcription in Alto4 XML
 │ 
+├── images
 ├── model_best.mlmodel
 ├── model_best_repolygonize.mlmodel
 ├── dataset.csv
