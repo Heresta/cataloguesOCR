@@ -36,9 +36,12 @@ In order to recreate the models presented in this repository, here are the comma
 ## Results
 <p class="float" align="center">
  <img src="images/results_model.png" width="300"/>
- <img src="images/results_model_repoly.png" width="300"/>
+ <img src="images/results_model_repoly.png" width="355"/>
  </p>
-
+ 
+Evaluation on the dev/ evaluation dataset.</br>
+Left: results for the model without repolygonization.</br>
+Right: results for the model with repolygonization.
 ## Thanks to 
 Thanks to Simon Gabay, Claire Jahan, Caroline Corbières, Gabriela Elgarrista and Carmen Brando for their help and work.
 
