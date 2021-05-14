@@ -41,9 +41,13 @@ After this test, a second dataset has been created. It is composed of 100 pages 
 In order to recreate the models presented in this repository, here are the commands done. 
 - Install Kraken by following instructions [here](https://github.com/mittagessen/kraken).
 - Clone this repository: `git clone https://github.com/Juliettejns/cataloguesOCR/`
-- Train model without repolygonization: `ketos train -t train/*.xml -e dev/*.xml -u NFKD -f alto`
-- Train model with repolygonization: `ketos train -t train/*.xml -e dev/*.xml -u NFKD -f alto --repolygonize`
-- Evaluate models: `ketos test -m [MODEL_NAME] -e dev/*.xml -f alto`
+- For the Dataset30:
+    - Train model without repolygonization: `ketos train -t train/*.xml -e dev/*.xml -u NFKD -f alto`
+    - Train model with repolygonization: `ketos train -t train/*.xml -e dev/*.xml -u NFKD -f alto --repolygonize`
+- For the Dataset100:
+    - Create a new dev dataset: `random_data.py Dataset100/*.xml`
+    - Train model: `ketos train -t train.txt -e dev.txt -u NFKD -f alto`
+- Evaluate models: `ketos test -m [MODEL_NAME] -e [EVAL_DIRECTORY]/*.xml -f alto`
 
 ## Results
 <p class="float" align="center">
