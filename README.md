@@ -51,13 +51,21 @@ In order to recreate the models presented in this repository, here are the comma
 
 ## Results
 <p class="float" align="center">
- <img src="images/results_model.png" width="300"/>
- <img src="images/results_model_repoly.png" width="355"/>
- </p>
- 
-Evaluation on the dev/ evaluation dataset.</br>
-Left: results for the model without repolygonization.</br>
-Right: results for the model with repolygonization.
+ <img src="images/resultat_model_30.png" height="200" width="300"/>
+ <img src="images/resultat_model_repolygonize_30.png" width="355"/>
+</p>
+Evaluation on the dev/ dataset:
+Left: results for the model of 30 pages without repolygonization.
+Right: results for the model of 30 pages with repolygonization.
+
+<p align="center">
+    <img src="images/results_model_100.png" height="200" width="300"/>
+    <img src="images/resultats_model_100_dev.png" height="200" width="300"/>
+</p>
+Results for the model of 100 pages without repolygonization:
+Left: evaluation on the dev dataset from the 100 pages.
+Right: evaluation on the dev/ dataset of the 30 pages.
+
 
 ## Thanks to 
 Thanks to Simon Gabay, Claire Jahan, Caroline Corbières, Gabriela Elgarrista and Carmen Brando for their help and work.
