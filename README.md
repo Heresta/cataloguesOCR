@@ -52,7 +52,7 @@ In order to recreate the models presented in this repository, here are the comma
 ## Results
 <p class="float" align="center">
  <img src="images/resultat_model_30.png" height="200" width="300"/>
- <img src="images/resultat_model_repolygonize_30.png" width="355"/>
+ <img src="images/resultats_model_repolygonize_30.png" height="200" width="300"/>
 </p>
 Evaluation on the dev/ dataset:
 Left: results for the model of 30 pages without repolygonization.
