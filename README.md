@@ -57,6 +57,7 @@ In order to recreate the models presented in this repository, here are the comma
 Evaluation on the dev/ dataset:</br>
 Left: results for the model of 30 pages without repolygonization.</br>
 Right: results for the model of 30 pages with repolygonization.</br>
+</br>
 
 <p align="center">
     <img src="images/results_model_100.png" height="200" width="300"/>
