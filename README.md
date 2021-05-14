@@ -6,22 +6,34 @@ In order to broaden this database, Caroline Corbières, intern of the project in
 In this context, the aim of this repository is to improve the ocerization of this [Catalogs Workflow](https://github.com/carolinecorbieres/ArtlasCatalogues). This step occurs at the beginning of the workflow and transforms the data from an image to a text. 
 The idea was not only to refine the OCR for [Artl@s](https://artlas.huma-num.fr/fr/) but also to make a useful tool for researchers who need to ocerize their catalogues. Therefore, this dataset holds exhibition catalogs, prepared by Caroline Corbières, catalogs of 19th to nowadays manuscripts fairs of the [Katabase](https://github.com/katabase) project, arranged by Simon Gabay and owners directories from the [Adresses et Annuaires group](https://paris-timemachine.huma-num.fr/groupe-adresses-et-annuaires/) of Paris Time Machine of the EHESS, produced by Gabriela Elgarrista. 
 
-The dataset is composed of 30 pages from the 150 pages dataset prepared [here](https://github.com/Juliettejns/cataloguesSegmentationOCR/), with 10 pages of each type of documents. It is supposed to be a small representative dataset in order to have a look on the impact of repolygonization, which is a process of optimizing the lines' polygones and ensuring the documents presented are compatible with the Kraken OCR, on the OCR. 90% of the dataset is used for the training and 10% for its evaluation.
+The first dataset is composed of 30 pages from the 150 pages dataset prepared [here](https://github.com/Juliettejns/cataloguesSegmentationOCR/), with 10 pages of each type of documents. It is supposed to be a small representative dataset in order to have a look on the impact of repolygonization, which is a process of optimizing the lines' polygones and ensuring the documents presented are compatible with the Kraken OCR, on the OCR. 90% of the dataset is used for the training and 10% for its evaluation. Therefore, the dev dataset is composed of 3 pages, with each page from a different type of document, selected randomly in the dataset.
 
+After this test, a second dataset has been created. It is composed of 100 pages from the 150 pages dataset, with 50 pages of each type of documents. A second model has been trained from this dataset, without repolygonisation, due to the results of the first model. The train and dev dataset have been created using the random_data python script which randomly select the differents pages of the corpus. 90% of the dataset is used for the training and 10% for its evaluation.
 
 ## Repository
 ```
-├── train
-│     ├─ images
-|     └─ transcription in Alto4 XML
+├── Dataset30
+|     ├── train
+|     │     ├─ images
+|     |     └─ transcription in Alto4 XML
+|     └─  dev
+|           ├─ images
+|           └─ transcription in Alto4 XML
 │ 
-├── dev
-│     ├─ images
+├── Dataset100
+|     ├─ images
 |     └─ transcription in Alto4 XML
-│ 
-├── model_best.mlmodel
-├── model_best_repolygonize.mlmodel
-├── dataset.csv
+|
+├── Models
+|     ├─ model_best_30.mlmodel
+|     ├─ model_best_repolygonize_30.mlmodel
+|     └─ model_best_100.mlmodel
+|
+├── Images
+|
+├── Dataset30.csv
+├── Dataset100.csv
+├── random_data.py
 └─ README.md
 ```
 
@@ -32,6 +44,16 @@ In order to recreate the models presented in this repository, here are the comma
 - Train model without repolygonization: `ketos train -t train/*.xml -e dev/*.xml -u NFKD -f alto`
 - Train model with repolygonization: `ketos train -t train/*.xml -e dev/*.xml -u NFKD -f alto --repolygonize`
 - Evaluate models: `ketos test -m [MODEL_NAME] -e dev/*.xml -f alto`
+
+## Results
+<p class="float" align="center">
+ <img src="images/results_model.png" width="300"/>
+ <img src="images/results_model_repoly.png" width="355"/>
+ </p>
+ 
+Evaluation on the dev/ evaluation dataset.</br>
+Left: results for the model without repolygonization.</br>
+Right: results for the model with repolygonization.
 
 ## Thanks to 
 Thanks to Simon Gabay, Claire Jahan, Caroline Corbières, Gabriela Elgarrista and Carmen Brando for their help and work.
